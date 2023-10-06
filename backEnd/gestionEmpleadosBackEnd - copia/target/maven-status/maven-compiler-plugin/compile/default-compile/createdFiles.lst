@@ -1,0 +1,4 @@
+com\mycompany\apiproductos\ControladorEmpleado.class
+com\mycompany\apiproductos\Empleado.class
+com\mycompany\apiproductos\EmpleadoRepository.class
+com\mycompany\apiproductos\Aplicacion.class
