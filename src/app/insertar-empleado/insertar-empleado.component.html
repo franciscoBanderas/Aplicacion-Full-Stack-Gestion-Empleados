@@ -1,0 +1,19 @@
+<form #agregarEmpleado = "ngForm" (ngSubmit) = "onClickSubmit(agregarEmpleado.value)" >
+    <div class="mb-3">
+      <label for="nombreEmpleado" class="form-label">Nombre del empleado</label>
+      <input type="text" class="form-control" name="nombreEmpleado" id="nombreEmpleado" ngModel>
+    </div>
+    <div class="mb-3">
+      <label for="apellidoEmpleado" class="form-label">Apellido del empleado</label>
+      <input type="text" class="form-control" name="apellidoEmpleado" id="apellidoEmpleado" ngModel>
+    </div>
+    <div class="mb-3">
+      <label for="emailEmpleado" class="form-label">Email empleado</label>
+      <input type="email" class="form-control" name="emailEmpleado" id="emailEmpleado" ngModel>
+    </div>
+    <div class="mb-3">
+      <label for="telefonoEmpleado" class="form-label">Teléfono</label>
+      <input type="text" class="form-control" name="telefonoEmpleado" id="telefonoEmpleado" ngModel>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

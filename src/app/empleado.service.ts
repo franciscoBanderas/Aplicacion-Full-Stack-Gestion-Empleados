@@ -26,4 +26,13 @@ private urlBase = "http://localhost:8080/empleados"
 
   }
 
+  modificarEmpleado(idEmpleado:Number,nombreEmpleado:String, apellidoEmpleado: String, emailEmpleado: String, telefonoEmpleado: String ): Observable<any>{
+    return this.clienteHttp.put<any>(this.urlBase, {id:idEmpleado ,nombre: nombreEmpleado, apellidos:apellidoEmpleado, correoElectronico: emailEmpleado, telefono:telefonoEmpleado });
+
+  }
+
+  borrarEmpleado(id:number){
+    return this.clienteHttp.delete<any>(this.urlBase + "/"+id);
+  }
+
 }

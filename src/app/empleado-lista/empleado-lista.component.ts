@@ -17,17 +17,12 @@ export class EmpleadoListaComponent {
   }
 
   private obtenerEmpleados() {
-    this.empleadoServicio.obtenerEmpleadosLista().subscribe(datos => {
-      this.empleados= datos;
+    this.empleadoServicio.obtenerEmpleadosLista().subscribe((datos) => {
+      this.empleados = datos;
     });
   }
 
-  onClickSubmit(data:any) {
-    //alert("Nombre del empleado : " + data.nombreEmpleado);
-
-    this.empleadoServicio.insertarEmpleado(data.nombreEmpleado, data.apellidoEmpleado,data.emailEmpleado, data.telefonoEmpleado).subscribe(datos =>{})
-    
-  
- }
-
+  public borrarEmpleado(id: number) {
+    this.empleadoServicio.borrarEmpleado(id).subscribe((datos) => {this.obtenerEmpleados()});
+  }
 }

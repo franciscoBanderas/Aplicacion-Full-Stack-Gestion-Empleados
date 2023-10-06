@@ -5,11 +5,15 @@ import { AppComponent } from './app.component';
 import { EmpleadoListaComponent } from './empleado-lista/empleado-lista.component';
 import {HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { InsertarEmpleadoComponent } from './insertar-empleado/insertar-empleado.component';
+import { ModificarEmpleadoComponent } from './modificar-empleado/modificar-empleado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmpleadoListaComponent
+    EmpleadoListaComponent,
+    InsertarEmpleadoComponent,
+    ModificarEmpleadoComponent
   ],
   imports: [
     BrowserModule,
