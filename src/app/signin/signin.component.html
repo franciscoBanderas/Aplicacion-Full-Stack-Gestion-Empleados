@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Crea tu cuenta ahora</h1>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <hr />
+    </div>
+    <div class="row" *ngIf="loading">
+      <div class="col-md-12">
+        <div class="spinner-border text-info float-right" role="satus">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <br />
+      <br />
+    </div>
+    <form (ngSubmit)="crear()" id="crear">
+      <div class="row">
+          <div class="col-md-12">
+             <input type="text" [(ngModel)]="usuario.nombre" [ngModelOptions]="{standalone:true}" placeholder="Nombre" class="form-control" required>
+          </div>
+      </div>
+      <br>
+      <div class="row">
+          <div class="col-md-12">
+             <input type="password" [(ngModel)]="usuario.contrasena" [ngModelOptions]="{standalone:true}" placeholder="Contraseña" class="form-control" required>
+          </div>
+      </div>
+      <br>
+      <div class="row">
+  <div class="col-md-12">
+  <input class="btn btn-success float-right" type="submit" value="Ingresar">
+  </div>
+      </div>
+    </form>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+          <label class="float-right"> <a href="#"(click)="regresar()">Regresar</a></label>
+      </div>
+    </div>
+  </div>

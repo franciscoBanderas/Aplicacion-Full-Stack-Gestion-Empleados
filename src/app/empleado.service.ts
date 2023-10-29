@@ -16,16 +16,13 @@ private urlBase = "http://localhost:8080/empleados"
   constructor(private clienteHttp:HttpClient ) { }
 
 
-
   obtenerEmpleadosLista(): Observable<Empleado[]>{
     return this.clienteHttp.get<Empleado[]>(this.urlBase);
   }
-
   insertarEmpleado(nombreEmpleado:String, apellidoEmpleado: String, emailEmpleado: String, telefonoEmpleado: String ): Observable<any>{
     return this.clienteHttp.post<any>(this.urlBase, { nombre: nombreEmpleado, apellidos:apellidoEmpleado, correoElectronico: emailEmpleado, telefono:telefonoEmpleado });
 
   }
-
   modificarEmpleado(idEmpleado:Number,nombreEmpleado:String, apellidoEmpleado: String, emailEmpleado: String, telefonoEmpleado: String ): Observable<any>{
     return this.clienteHttp.put<any>(this.urlBase, {id:idEmpleado ,nombre: nombreEmpleado, apellidos:apellidoEmpleado, correoElectronico: emailEmpleado, telefono:telefonoEmpleado });
 
@@ -34,5 +31,13 @@ private urlBase = "http://localhost:8080/empleados"
   borrarEmpleado(id:number){
     return this.clienteHttp.delete<any>(this.urlBase + "/"+id);
   }
+
+
+  login(nombreUsuario: String ,contrasenaUsuario: String ): Observable<any>{
+    return this.clienteHttp.post<any>(this.urlBase, {nombre: nombreUsuario, contrasena:contrasenaUsuario});
+
+  }
+
+  
 
 }

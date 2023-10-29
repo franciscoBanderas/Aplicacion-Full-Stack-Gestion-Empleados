@@ -5,7 +5,7 @@ import { EmpleadoService } from '../empleado.service';
 @Component({
   selector: 'app-empleado-lista',
   templateUrl: './empleado-lista.component.html',
-  //styleUrls: ['./empleado-lista.component.css']
+  styleUrls: ['./empleado-lista.component.css']
 })
 export class EmpleadoListaComponent {
   empleados: Empleado[];

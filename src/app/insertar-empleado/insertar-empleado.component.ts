@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { EmpleadoService } from '../empleado.service';
+import {Router} from '@angular/router';
+
+
+
 @Component({
   selector: 'app-insertar-empleado',
   templateUrl: './insertar-empleado.component.html',
@@ -7,14 +11,25 @@ import { EmpleadoService } from '../empleado.service';
 })
 export class InsertarEmpleadoComponent {
 
-  constructor(private empleadoServicio: EmpleadoService) {}
+  constructor(private empleadoServicio: EmpleadoService, private enrutador:Router) {}
 
   onClickSubmit(data:any) {
-    //alert("Nombre del empleado : " + data.nombreEmpleado);
+   
 
-    this.empleadoServicio.insertarEmpleado(data.nombreEmpleado, data.apellidoEmpleado,data.emailEmpleado, data.telefonoEmpleado).subscribe(datos =>{})
+    this.empleadoServicio.insertarEmpleado(data.nombreEmpleado, data.apellidoEmpleado,data.emailEmpleado, data.telefonoEmpleado).subscribe({
+
+         next:(datos) =>{
+          this.irListaPersonas();
+         }
+
+
+
+    })
     
   
  }
+  irListaPersonas() {
+   this.enrutador.navigate(['/empleados']);
+  }
 
 }
